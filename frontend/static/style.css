@@ -1,0 +1,87 @@
+/* ===========================
+   Global Styles
+=========================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===========================
+   Container / Form Card
+=========================== */
+.container {
+    width: 50%;
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   Heading
+=========================== */
+h1 {
+    color: #1f3c88; /* Deep professional blue */
+    margin-bottom: 25px;
+}
+
+/* ===========================
+   Input Fields
+=========================== */
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #1f3c88;
+    outline: none;
+    box-shadow: 0 0 5px rgba(31, 60, 136, 0.3);
+}
+
+/* ===========================
+   Button
+=========================== */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1f3c88; /* Professional deep blue */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #162a5e; /* Darker shade on hover */
+}
+
+/* ===========================
+   Placeholder Text
+=========================== */
+::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}

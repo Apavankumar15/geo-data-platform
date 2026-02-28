@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geo Data Platform</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h2>Geo Data Download Platform</h2>
+
+<form action="/download" method="post" enctype="multipart/form-data">
+
+<input type="file" name="file" required>
+
+<select name="collection">
+<option value="sentinel-2-l2a">Sentinel-2</option>
+<option value="landsat-c2-l2">Landsat</option>
+<option value="sentinel-1-grd">Sentinel-1</option>
+</select>
+
+<input type="text" name="date_range" placeholder="2025-01-01/2025-01-31">
+
+<input type="number" name="cloud" placeholder="Cloud %">
+
+<button type="submit">Download</button>
+
+</form>
+
+</body>
+</html>

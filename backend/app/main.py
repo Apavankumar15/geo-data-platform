@@ -1,13 +1,28 @@
 from fastapi import FastAPI, UploadFile, File, Form
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
 import shutil
 import os
 import geopandas as gpd
+
 from backend.app.stac_service import search_scene
 from backend.app.raster_service import clip_raster
 from backend.app.config import UPLOAD_FOLDER
 
 app = FastAPI()
 
+# ✅ Static CSS folder
+app.mount("/static", StaticFiles(directory="frontend/static"), name="static")
+
+
+# ✅ Home Page
+@app.get("/")
+def home():
+    return FileResponse("frontend/templates/index.html")
+
+
+# ✅ Download API
 @app.post("/download")
 async def download_data(
     file: UploadFile = File(...),
@@ -32,5 +47,8 @@ async def download_data(
     asset_url = list(item.assets.values())[0].href
 
     output_path = clip_raster(asset_url, file_path)
-
-    return {"output_file": output_path}
+    return FileResponse(
+    path=output_path,
+    filename="clipped_image.tif",
+    media_type="application/octet-stream"
+)
