@@ -3,7 +3,7 @@ from rasterio.mask import mask
 import geopandas as gpd
 import os
 import uuid
-from app.config import OUTPUT_FOLDER
+from backend.app.config import OUTPUT_FOLDER
 
 def clip_raster(asset_url, aoi_path):
 

@@ -1,6 +1,6 @@
 from pystac_client import Client
 import planetary_computer
-from app.config import STAC_URL
+from backend.app.config import STAC_URL
 
 def search_scene(collection, bbox, date_range, cloud):
     catalog = Client.open(STAC_URL)

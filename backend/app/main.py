@@ -2,9 +2,9 @@ from fastapi import FastAPI, UploadFile, File, Form
 import shutil
 import os
 import geopandas as gpd
-from app.stac_service import search_scene
-from app.raster_service import clip_raster
-from app.config import UPLOAD_FOLDER
+from backend.app.stac_service import search_scene
+from backend.app.raster_service import clip_raster
+from backend.app.config import UPLOAD_FOLDER
 
 app = FastAPI()
 
